@@ -37,4 +37,14 @@ Installation of Media Wiki, Wiki forum on AWS using Terraform for Infra and Ansi
 
 6. After successfull installation Terraform will print public IP of webserver on your terminal access that IP on your Browser and do installation of Mediawiki and you can get connection details for Database under `install_mysql.sh` file. 
 
+# TODO
+
+- Snapshot Latest Webserver image and create ASG using this image. 
+- Load Balancer. 
+- Mysql master slave config or RDS. 
+- Securing for Apache & Php installation. 
+
+# Note: Please check screenshots folder for screenshot of my installation.
+
+
 
