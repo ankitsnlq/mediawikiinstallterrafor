@@ -31,7 +31,7 @@ Installation of Media Wiki, Wiki forum on AWS using Terraform for Infra and Ansi
 4. Make sure to update `ssh_key_private` and `ssh_public_key` path to your private and public key on your Laptop which will be used for connecting to  Ec2 instances. 
 5. Go to root dir of project and run command. 
 
-        `terraform init
+         terraform init
          terraform plan
          terraform apply
 
