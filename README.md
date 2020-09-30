@@ -23,7 +23,7 @@ Installation of Media Wiki, Wiki forum on AWS using Terraform for Infra and Ansi
 - Create Apache Vhost and remove default Vhost. 
 - Download and extract Mediawiki installtion file to right folder.
 
-# How to use this Repo to install and Mediawiki. 
+# How to use this Repo to install Mediawiki. 
 
 1. Clone this repo wherever you have terraform,Ansible and aws cli setup. 
 2. Make sure IAM user have proper permission.
@@ -31,9 +31,10 @@ Installation of Media Wiki, Wiki forum on AWS using Terraform for Infra and Ansi
 4. Make sure to update `ssh_key_private` and `ssh_public_key` path to your private and public key on your Laptop which will be used for connecting to  Ec2 instances. 
 5. Go to root dir of project and run command. 
 
-        `terraform init`
-        `terraform plan`
-        `terraform apply`
+        `terraform init
+         terraform plan
+         terraform apply`
+         
 6. After successfull installation Terraform will print public IP of webserver on your terminal access that IP on your Browser and do installation of Mediawiki and you can get connection details for Database under `install_mysql.sh` file. 
 
 
