@@ -130,6 +130,11 @@ resource "aws_instance" "db" {
 }
 
 output "publicip_webserver" {
-  description = "List of IDs of private subnets"
+  description = "Public IP of Webserver"
   value       = "${aws_instance.web.public_ip}"
+}
+
+output "DBSERVER_IP" {
+  description = "Private IP of Database server."
+  value       = "${aws_instance.db.private_ip}"
 }
