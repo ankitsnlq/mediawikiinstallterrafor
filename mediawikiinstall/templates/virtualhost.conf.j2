@@ -1,0 +1,12 @@
+<VirtualHost *:80>
+DocumentRoot /var/www/html
+Options -Indexes
+DirectoryIndex index.html index.php
+<Directory /var/www/html/>
+        AllowOverride all
+        Order allow,deny
+        allow from all
+</Directory>
+ErrorLog /var/log/apache2/default-error.log
+CustomLog /var/log/apache2/default-access.log combined
+</VirtualHost>

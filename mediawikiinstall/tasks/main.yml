@@ -1,0 +1,67 @@
+---
+# tasks file for mediawikiinstall
+- name: Install Apache2 and php
+  apt:
+    pkg: 
+    - apache2
+    - php
+    - php-mysql
+    - libapache2-mod-php
+    - php-mbstring
+    - php-xml
+    - php-gd
+    state: latest
+    update_cache: yes
+
+- name: Enable rewrite module for apache2
+  apache2_module:
+    state: present
+    name: rewrite
+  notify:
+    - Restart apache2  
+
+- name: Remove default Apache Virt Host as We are not using domain name. 
+  file: 
+    path: /etc/apache2/sites-enabled/000-default.conf
+    state: absent
+  notify:
+    - Restart apache2
+
+- name: Create new Virtualhost
+  template:
+    src: virtualhost.conf.j2
+    dest: /etc/apache2/sites-available/mediawiki.conf
+    mode: 0640
+
+- name: check of mediawiki link exist
+  stat:
+    path: /etc/apache2/sites-enabled/mediawiki.conf
+  register: mediawiki_conf
+   
+- name: Enable new host
+  command: a2ensite mediawiki.conf
+  when: mediawiki_conf.stat.exists == true
+  notify:
+    - Restart apache2
+
+- name: Remove default index.html from html folder
+  file:
+    path: /var/www/html/index.html
+    state: absent
+
+
+- name: Download and Extract MediaWiki Tar file to /var/www/html folder. 
+  unarchive:
+    src: https://releases.wikimedia.org/mediawiki/1.35/mediawiki-1.35.0.tar.gz
+    dest: /var/www/html/
+    remote_src: yes
+    extra_opts: [--strip-components=1]
+
+- name: change html folder user to www-data user of apache and php 
+  file: 
+    path: /var/www/html/
+    state: directory
+    recurse: yes
+    owner: www-data
+    group: www-data
+   
