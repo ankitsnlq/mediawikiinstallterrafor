@@ -44,7 +44,7 @@ Installation of Media Wiki, Wiki forum on AWS using Terraform for Infra and Ansi
 - Mysql master slave config or RDS. 
 - Securing for Apache & Php installation. 
 
-# Note: Please check screenshots folder for screenshot of my installation.
+**Note: You can check screenshots folder for screenshot of my installation.**
 
 
 
