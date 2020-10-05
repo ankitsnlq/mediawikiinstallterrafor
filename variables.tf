@@ -30,7 +30,7 @@ variable "ssh_key_private" {
   default = "~/Documents/personal/techofy.pem"
 }
 
-variable "ssh_public_key" {
+variable " " {
   description = "Update your Public key path in next line"
   type = string
   default = "~/Documents/personal/techofy.pub"
