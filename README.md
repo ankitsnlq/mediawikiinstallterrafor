@@ -1,7 +1,7 @@
 This was interview Task for a company and they rejected by looking what I did in this repo. 
 They have not given me reason why they have rejected but based on what I did here are few things I can think of. 
- - I used install_mysql.sh file to install mysql and user using ec2 user data file which contained username and password, may be they didn't liked. ( Since I was not exposing mysql server with SSH access I thought to use instance meta Data which is far secure.)
- - I have AWS official Terraform VPC code to create VPC which they might have not liked. But I just wanted to show that I know how to use terrform modules and variables and output from them. 
+ - I used install_mysql.sh file to install mysql and used ec2 user data file which contained username and password, may be they didn't liked. ( Since I was not exposing mysql server with SSH access I thought to use instance meta Data which is far secure.)
+ - I have used AWS official Terraform VPC code to create VPC which they might have not liked. But I just wanted to show that I know how to use terrform modules and variables and output from them. 
  - This Repo don't have any autoscalling in place this can also be reason. 
 
 Note: Companies if you are rejecting someone by looking his task which is running fine but you didn't liked the way it is implemented then please give your 2 minutes to provide inputs on it.Thanks
